@@ -1,0 +1,2 @@
+/usr/bin/ar qc libllllib.a CMakeFiles/llllib.dir/llllib.cpp.o
+/usr/bin/ranlib libllllib.a

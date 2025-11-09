@@ -3,8 +3,22 @@
 //
 
 #include <iostream>
+
+
+// ADDED Boost Library
+#include <boost/multiprecision/cpp_int.hpp>
+
+//BOOST Libraries
+using namespace boost::multiprecision;
+
 using namespace std;
-using lint = long long int;
+
+//cpp_int lets us use any number, no matter the size, replacing long long int means all instances of lint are based on cpp_int now
+
+using lint = cpp_int;
+
+
+
 
 //TASK 1
 
@@ -173,8 +187,7 @@ if (selection != 1 && selection != 2) {
 Factoring 359446091074757:
 673 127 401 131 223 359
 Factoring 15419616932490265564907:
-(FAILS AS THE LONG LONG INT MAX SIZE IS 9.22 × 10¹⁸ but the given value is 15,419,616,932,490,265,564,907 ≈ 1.5 × 10²²)
-This can be fixed but I need to use the boost library.
+2 3 5 2609072239 197
 
  */
 //Questions
