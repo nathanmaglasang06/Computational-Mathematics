@@ -5,7 +5,7 @@ events:
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineSystem.cmake:12 (find_program)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_UNAME"
     description: "Path to a program."
@@ -38,6 +38,10 @@ events:
       - "/Applications/VMware Fusion.app/Contents/Public/"
       - "/usr/local/share/dotnet/"
       - "/Users/nathanmaglasang/.dotnet/tools/"
+      - "/Applications/nmap.app/Contents/Resources/bin/"
+      - "/Applications/ncat.app/Contents/Resources/bin/"
+      - "/Applications/nping.app/Contents/Resources/bin/"
+      - "/Applications/Zenmap.app/Contents/Resources/bin/"
     searched_directories:
       - "/Users/nathanmaglasang/.pyenv/shims/uname"
       - "/Users/nathanmaglasang/.pyenv/bin/uname"
@@ -67,18 +71,22 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Applications/nmap.app/Contents/Resources/bin"
+        - "/Applications/ncat.app/Contents/Resources/bin"
+        - "/Applications/nping.app/Contents/Resources/bin"
+        - "/Applications/zenmap.app/Contents/Resources/bin"
   -
     kind: "message-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineSystem.cmake:212 (message)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     message: |
       The system is: Darwin - 25.0.0 - arm64
   -
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeUnixFindMake.cmake:5 (find_program)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_MAKE_PROGRAM"
     description: "Path to a program."
@@ -113,6 +121,10 @@ events:
       - "/Applications/VMware Fusion.app/Contents/Public/"
       - "/usr/local/share/dotnet/"
       - "/Users/nathanmaglasang/.dotnet/tools/"
+      - "/Applications/nmap.app/Contents/Resources/bin/"
+      - "/Applications/ncat.app/Contents/Resources/bin/"
+      - "/Applications/nping.app/Contents/Resources/bin/"
+      - "/Applications/Zenmap.app/Contents/Resources/bin/"
     searched_directories:
       - "/Users/nathanmaglasang/.pyenv/shims/gmake"
       - "/Users/nathanmaglasang/.pyenv/bin/gmake"
@@ -132,6 +144,10 @@ events:
       - "/Applications/VMware Fusion.app/Contents/Public/gmake"
       - "/usr/local/share/dotnet/gmake"
       - "/Users/nathanmaglasang/.dotnet/tools/gmake"
+      - "/Applications/nmap.app/Contents/Resources/bin/gmake"
+      - "/Applications/ncat.app/Contents/Resources/bin/gmake"
+      - "/Applications/nping.app/Contents/Resources/bin/gmake"
+      - "/Applications/Zenmap.app/Contents/Resources/bin/gmake"
       - "/Users/nathanmaglasang/.pyenv/shims/make"
       - "/Users/nathanmaglasang/.pyenv/bin/make"
       - "/Library/Frameworks/Python.framework/Versions/3.12/bin/make"
@@ -160,12 +176,16 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Applications/nmap.app/Contents/Resources/bin"
+        - "/Applications/ncat.app/Contents/Resources/bin"
+        - "/Applications/nping.app/Contents/Resources/bin"
+        - "/Applications/zenmap.app/Contents/Resources/bin"
   -
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompiler.cmake:73 (find_program)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:64 (_cmake_find_compiler)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_C_COMPILER"
     description: "C compiler"
@@ -204,6 +224,10 @@ events:
       - "/Applications/VMware Fusion.app/Contents/Public/"
       - "/usr/local/share/dotnet/"
       - "/Users/nathanmaglasang/.dotnet/tools/"
+      - "/Applications/nmap.app/Contents/Resources/bin/"
+      - "/Applications/ncat.app/Contents/Resources/bin/"
+      - "/Applications/nping.app/Contents/Resources/bin/"
+      - "/Applications/Zenmap.app/Contents/Resources/bin/"
     searched_directories:
       - "/Users/nathanmaglasang/.pyenv/shims/cc"
       - "/Users/nathanmaglasang/.pyenv/bin/cc"
@@ -233,6 +257,10 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Applications/nmap.app/Contents/Resources/bin"
+        - "/Applications/ncat.app/Contents/Resources/bin"
+        - "/Applications/nping.app/Contents/Resources/bin"
+        - "/Applications/zenmap.app/Contents/Resources/bin"
   -
     kind: "find-v1"
     backtrace:
@@ -241,7 +269,7 @@ events:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     mode: "file"
     variable: "src_in"
     description: "Path to a file."
@@ -278,13 +306,17 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Applications/nmap.app/Contents/Resources/bin"
+        - "/Applications/ncat.app/Contents/Resources/bin"
+        - "/Applications/nping.app/Contents/Resources/bin"
+        - "/Applications/zenmap.app/Contents/Resources/bin"
   -
     kind: "message-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
       Compiler: /usr/bin/cc 
@@ -305,7 +337,7 @@ events:
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:290 (message)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     message: |
       Detecting C compiler apple sysroot: "/usr/bin/cc" "-E" "apple-sdk.c"
         # 1 "apple-sdk.c"
@@ -346,7 +378,7 @@ events:
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_AR"
     description: "Path to a program."
@@ -379,6 +411,10 @@ events:
       - "/Applications/VMware Fusion.app/Contents/Public/"
       - "/usr/local/share/dotnet/"
       - "/Users/nathanmaglasang/.dotnet/tools/"
+      - "/Applications/nmap.app/Contents/Resources/bin/"
+      - "/Applications/ncat.app/Contents/Resources/bin/"
+      - "/Applications/nping.app/Contents/Resources/bin/"
+      - "/Applications/Zenmap.app/Contents/Resources/bin/"
     found: "/usr/bin/ar"
     search_context:
       ENV{PATH}:
@@ -400,12 +436,16 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Applications/nmap.app/Contents/Resources/bin"
+        - "/Applications/ncat.app/Contents/Resources/bin"
+        - "/Applications/nping.app/Contents/Resources/bin"
+        - "/Applications/zenmap.app/Contents/Resources/bin"
   -
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_RANLIB"
     description: "Path to a program."
@@ -438,6 +478,10 @@ events:
       - "/Applications/VMware Fusion.app/Contents/Public/"
       - "/usr/local/share/dotnet/"
       - "/Users/nathanmaglasang/.dotnet/tools/"
+      - "/Applications/nmap.app/Contents/Resources/bin/"
+      - "/Applications/ncat.app/Contents/Resources/bin/"
+      - "/Applications/nping.app/Contents/Resources/bin/"
+      - "/Applications/Zenmap.app/Contents/Resources/bin/"
     found: "/usr/bin/ranlib"
     search_context:
       ENV{PATH}:
@@ -459,12 +503,16 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Applications/nmap.app/Contents/Resources/bin"
+        - "/Applications/ncat.app/Contents/Resources/bin"
+        - "/Applications/nping.app/Contents/Resources/bin"
+        - "/Applications/zenmap.app/Contents/Resources/bin"
   -
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_STRIP"
     description: "Path to a program."
@@ -497,6 +545,10 @@ events:
       - "/Applications/VMware Fusion.app/Contents/Public/"
       - "/usr/local/share/dotnet/"
       - "/Users/nathanmaglasang/.dotnet/tools/"
+      - "/Applications/nmap.app/Contents/Resources/bin/"
+      - "/Applications/ncat.app/Contents/Resources/bin/"
+      - "/Applications/nping.app/Contents/Resources/bin/"
+      - "/Applications/Zenmap.app/Contents/Resources/bin/"
     found: "/usr/bin/strip"
     search_context:
       ENV{PATH}:
@@ -518,12 +570,16 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Applications/nmap.app/Contents/Resources/bin"
+        - "/Applications/ncat.app/Contents/Resources/bin"
+        - "/Applications/nping.app/Contents/Resources/bin"
+        - "/Applications/zenmap.app/Contents/Resources/bin"
   -
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_LINKER"
     description: "Path to a program."
@@ -556,6 +612,10 @@ events:
       - "/Applications/VMware Fusion.app/Contents/Public/"
       - "/usr/local/share/dotnet/"
       - "/Users/nathanmaglasang/.dotnet/tools/"
+      - "/Applications/nmap.app/Contents/Resources/bin/"
+      - "/Applications/ncat.app/Contents/Resources/bin/"
+      - "/Applications/nping.app/Contents/Resources/bin/"
+      - "/Applications/Zenmap.app/Contents/Resources/bin/"
     found: "/usr/bin/ld"
     search_context:
       ENV{PATH}:
@@ -577,12 +637,16 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Applications/nmap.app/Contents/Resources/bin"
+        - "/Applications/ncat.app/Contents/Resources/bin"
+        - "/Applications/nping.app/Contents/Resources/bin"
+        - "/Applications/zenmap.app/Contents/Resources/bin"
   -
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_NM"
     description: "Path to a program."
@@ -615,6 +679,10 @@ events:
       - "/Applications/VMware Fusion.app/Contents/Public/"
       - "/usr/local/share/dotnet/"
       - "/Users/nathanmaglasang/.dotnet/tools/"
+      - "/Applications/nmap.app/Contents/Resources/bin/"
+      - "/Applications/ncat.app/Contents/Resources/bin/"
+      - "/Applications/nping.app/Contents/Resources/bin/"
+      - "/Applications/Zenmap.app/Contents/Resources/bin/"
     found: "/usr/bin/nm"
     search_context:
       ENV{PATH}:
@@ -636,12 +704,16 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Applications/nmap.app/Contents/Resources/bin"
+        - "/Applications/ncat.app/Contents/Resources/bin"
+        - "/Applications/nping.app/Contents/Resources/bin"
+        - "/Applications/zenmap.app/Contents/Resources/bin"
   -
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_OBJDUMP"
     description: "Path to a program."
@@ -674,6 +746,10 @@ events:
       - "/Applications/VMware Fusion.app/Contents/Public/"
       - "/usr/local/share/dotnet/"
       - "/Users/nathanmaglasang/.dotnet/tools/"
+      - "/Applications/nmap.app/Contents/Resources/bin/"
+      - "/Applications/ncat.app/Contents/Resources/bin/"
+      - "/Applications/nping.app/Contents/Resources/bin/"
+      - "/Applications/Zenmap.app/Contents/Resources/bin/"
     found: "/usr/bin/objdump"
     search_context:
       ENV{PATH}:
@@ -695,12 +771,16 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Applications/nmap.app/Contents/Resources/bin"
+        - "/Applications/ncat.app/Contents/Resources/bin"
+        - "/Applications/nping.app/Contents/Resources/bin"
+        - "/Applications/zenmap.app/Contents/Resources/bin"
   -
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_OBJCOPY"
     description: "Path to a program."
@@ -733,6 +813,10 @@ events:
       - "/Applications/VMware Fusion.app/Contents/Public/"
       - "/usr/local/share/dotnet/"
       - "/Users/nathanmaglasang/.dotnet/tools/"
+      - "/Applications/nmap.app/Contents/Resources/bin/"
+      - "/Applications/ncat.app/Contents/Resources/bin/"
+      - "/Applications/nping.app/Contents/Resources/bin/"
+      - "/Applications/Zenmap.app/Contents/Resources/bin/"
     searched_directories:
       - "/usr/bin/objcopy"
       - "/Users/nathanmaglasang/.pyenv/shims/objcopy"
@@ -752,6 +836,10 @@ events:
       - "/Applications/VMware Fusion.app/Contents/Public/objcopy"
       - "/usr/local/share/dotnet/objcopy"
       - "/Users/nathanmaglasang/.dotnet/tools/objcopy"
+      - "/Applications/nmap.app/Contents/Resources/bin/objcopy"
+      - "/Applications/ncat.app/Contents/Resources/bin/objcopy"
+      - "/Applications/nping.app/Contents/Resources/bin/objcopy"
+      - "/Applications/Zenmap.app/Contents/Resources/bin/objcopy"
     found: false
     search_context:
       ENV{PATH}:
@@ -773,12 +861,16 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Applications/nmap.app/Contents/Resources/bin"
+        - "/Applications/ncat.app/Contents/Resources/bin"
+        - "/Applications/nping.app/Contents/Resources/bin"
+        - "/Applications/zenmap.app/Contents/Resources/bin"
   -
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_READELF"
     description: "Path to a program."
@@ -811,6 +903,10 @@ events:
       - "/Applications/VMware Fusion.app/Contents/Public/"
       - "/usr/local/share/dotnet/"
       - "/Users/nathanmaglasang/.dotnet/tools/"
+      - "/Applications/nmap.app/Contents/Resources/bin/"
+      - "/Applications/ncat.app/Contents/Resources/bin/"
+      - "/Applications/nping.app/Contents/Resources/bin/"
+      - "/Applications/Zenmap.app/Contents/Resources/bin/"
     searched_directories:
       - "/usr/bin/readelf"
       - "/Users/nathanmaglasang/.pyenv/shims/readelf"
@@ -830,6 +926,10 @@ events:
       - "/Applications/VMware Fusion.app/Contents/Public/readelf"
       - "/usr/local/share/dotnet/readelf"
       - "/Users/nathanmaglasang/.dotnet/tools/readelf"
+      - "/Applications/nmap.app/Contents/Resources/bin/readelf"
+      - "/Applications/ncat.app/Contents/Resources/bin/readelf"
+      - "/Applications/nping.app/Contents/Resources/bin/readelf"
+      - "/Applications/Zenmap.app/Contents/Resources/bin/readelf"
     found: false
     search_context:
       ENV{PATH}:
@@ -851,12 +951,16 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Applications/nmap.app/Contents/Resources/bin"
+        - "/Applications/ncat.app/Contents/Resources/bin"
+        - "/Applications/nping.app/Contents/Resources/bin"
+        - "/Applications/zenmap.app/Contents/Resources/bin"
   -
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_DLLTOOL"
     description: "Path to a program."
@@ -889,6 +993,10 @@ events:
       - "/Applications/VMware Fusion.app/Contents/Public/"
       - "/usr/local/share/dotnet/"
       - "/Users/nathanmaglasang/.dotnet/tools/"
+      - "/Applications/nmap.app/Contents/Resources/bin/"
+      - "/Applications/ncat.app/Contents/Resources/bin/"
+      - "/Applications/nping.app/Contents/Resources/bin/"
+      - "/Applications/Zenmap.app/Contents/Resources/bin/"
     searched_directories:
       - "/usr/bin/dlltool"
       - "/Users/nathanmaglasang/.pyenv/shims/dlltool"
@@ -908,6 +1016,10 @@ events:
       - "/Applications/VMware Fusion.app/Contents/Public/dlltool"
       - "/usr/local/share/dotnet/dlltool"
       - "/Users/nathanmaglasang/.dotnet/tools/dlltool"
+      - "/Applications/nmap.app/Contents/Resources/bin/dlltool"
+      - "/Applications/ncat.app/Contents/Resources/bin/dlltool"
+      - "/Applications/nping.app/Contents/Resources/bin/dlltool"
+      - "/Applications/Zenmap.app/Contents/Resources/bin/dlltool"
     found: false
     search_context:
       ENV{PATH}:
@@ -929,12 +1041,16 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Applications/nmap.app/Contents/Resources/bin"
+        - "/Applications/ncat.app/Contents/Resources/bin"
+        - "/Applications/nping.app/Contents/Resources/bin"
+        - "/Applications/zenmap.app/Contents/Resources/bin"
   -
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_ADDR2LINE"
     description: "Path to a program."
@@ -967,6 +1083,10 @@ events:
       - "/Applications/VMware Fusion.app/Contents/Public/"
       - "/usr/local/share/dotnet/"
       - "/Users/nathanmaglasang/.dotnet/tools/"
+      - "/Applications/nmap.app/Contents/Resources/bin/"
+      - "/Applications/ncat.app/Contents/Resources/bin/"
+      - "/Applications/nping.app/Contents/Resources/bin/"
+      - "/Applications/Zenmap.app/Contents/Resources/bin/"
     searched_directories:
       - "/usr/bin/addr2line"
       - "/Users/nathanmaglasang/.pyenv/shims/addr2line"
@@ -986,6 +1106,10 @@ events:
       - "/Applications/VMware Fusion.app/Contents/Public/addr2line"
       - "/usr/local/share/dotnet/addr2line"
       - "/Users/nathanmaglasang/.dotnet/tools/addr2line"
+      - "/Applications/nmap.app/Contents/Resources/bin/addr2line"
+      - "/Applications/ncat.app/Contents/Resources/bin/addr2line"
+      - "/Applications/nping.app/Contents/Resources/bin/addr2line"
+      - "/Applications/Zenmap.app/Contents/Resources/bin/addr2line"
     found: false
     search_context:
       ENV{PATH}:
@@ -1007,12 +1131,16 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Applications/nmap.app/Contents/Resources/bin"
+        - "/Applications/ncat.app/Contents/Resources/bin"
+        - "/Applications/nping.app/Contents/Resources/bin"
+        - "/Applications/zenmap.app/Contents/Resources/bin"
   -
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_TAPI"
     description: "Path to a program."
@@ -1045,6 +1173,10 @@ events:
       - "/Applications/VMware Fusion.app/Contents/Public/"
       - "/usr/local/share/dotnet/"
       - "/Users/nathanmaglasang/.dotnet/tools/"
+      - "/Applications/nmap.app/Contents/Resources/bin/"
+      - "/Applications/ncat.app/Contents/Resources/bin/"
+      - "/Applications/nping.app/Contents/Resources/bin/"
+      - "/Applications/Zenmap.app/Contents/Resources/bin/"
     searched_directories:
       - "/usr/bin/tapi"
       - "/Users/nathanmaglasang/.pyenv/shims/tapi"
@@ -1064,6 +1196,10 @@ events:
       - "/Applications/VMware Fusion.app/Contents/Public/tapi"
       - "/usr/local/share/dotnet/tapi"
       - "/Users/nathanmaglasang/.dotnet/tools/tapi"
+      - "/Applications/nmap.app/Contents/Resources/bin/tapi"
+      - "/Applications/ncat.app/Contents/Resources/bin/tapi"
+      - "/Applications/nping.app/Contents/Resources/bin/tapi"
+      - "/Applications/Zenmap.app/Contents/Resources/bin/tapi"
     found: false
     search_context:
       ENV{PATH}:
@@ -1085,12 +1221,16 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Applications/nmap.app/Contents/Resources/bin"
+        - "/Applications/ncat.app/Contents/Resources/bin"
+        - "/Applications/nping.app/Contents/Resources/bin"
+        - "/Applications/zenmap.app/Contents/Resources/bin"
   -
     kind: "find-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompiler.cmake:54 (find_program)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:69 (_cmake_find_compiler)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_CXX_COMPILER"
     description: "CXX compiler"
@@ -1133,6 +1273,10 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Applications/nmap.app/Contents/Resources/bin"
+        - "/Applications/ncat.app/Contents/Resources/bin"
+        - "/Applications/nping.app/Contents/Resources/bin"
+        - "/Applications/zenmap.app/Contents/Resources/bin"
   -
     kind: "find-v1"
     backtrace:
@@ -1141,7 +1285,7 @@ events:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     mode: "file"
     variable: "src_in"
     description: "Path to a file."
@@ -1178,17 +1322,21 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Applications/nmap.app/Contents/Resources/bin"
+        - "/Applications/ncat.app/Contents/Resources/bin"
+        - "/Applications/nping.app/Contents/Resources/bin"
+        - "/Applications/zenmap.app/Contents/Resources/bin"
   -
     kind: "message-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
       Compiler: /usr/bin/c++ 
-      Build flags: 
+      Build flags: -I/opt/homebrew/include
       Id flags:  
       
       The output was:
@@ -1205,9 +1353,9 @@ events:
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerId.cmake:290 (message)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     message: |
-      Detecting CXX compiler apple sysroot: "/usr/bin/c++" "-E" "apple-sdk.cpp"
+      Detecting CXX compiler apple sysroot: "/usr/bin/c++" "-I/opt/homebrew/include" "-E" "apple-sdk.cpp"
         # 1 "apple-sdk.cpp"
         # 1 "<built-in>" 1
         # 1 "<built-in>" 3
@@ -1246,7 +1394,7 @@ events:
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/Platform/Darwin.cmake:76 (find_program)"
       - "/opt/homebrew/share/cmake/Modules/CMakeSystemSpecificInformation.cmake:32 (include)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_INSTALL_NAME_TOOL"
     description: "Path to a program."
@@ -1279,6 +1427,10 @@ events:
       - "/Applications/VMware Fusion.app/Contents/Public/"
       - "/usr/local/share/dotnet/"
       - "/Users/nathanmaglasang/.dotnet/tools/"
+      - "/Applications/nmap.app/Contents/Resources/bin/"
+      - "/Applications/ncat.app/Contents/Resources/bin/"
+      - "/Applications/nping.app/Contents/Resources/bin/"
+      - "/Applications/Zenmap.app/Contents/Resources/bin/"
     searched_directories:
       - "/Users/nathanmaglasang/.pyenv/shims/install_name_tool"
       - "/Users/nathanmaglasang/.pyenv/bin/install_name_tool"
@@ -1308,21 +1460,26 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Applications/nmap.app/Contents/Resources/bin"
+        - "/Applications/ncat.app/Contents/Resources/bin"
+        - "/Applications/nping.app/Contents/Resources/bin"
+        - "/Applications/zenmap.app/Contents/Resources/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
   -
     kind: "try_compile-v1"
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
       - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-mxhpcM"
-      binary: "/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-mxhpcM"
+      source: "/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-CkJLD1"
+      binary: "/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-CkJLD1"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
-      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-L/opt/homebrew/lib"
       CMAKE_OSX_ARCHITECTURES: ""
       CMAKE_OSX_DEPLOYMENT_TARGET: ""
       CMAKE_OSX_SYSROOT: ""
@@ -1330,18 +1487,18 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-mxhpcM'
+        Change Dir: '/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-CkJLD1'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_78234/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_78234.dir/build.make CMakeFiles/cmTC_78234.dir/build
-        Building C object CMakeFiles/cmTC_78234.dir/CMakeCCompilerABI.c.o
-        /usr/bin/cc   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_78234.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_78234.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_78234.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_974be/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_974be.dir/build.make CMakeFiles/cmTC_974be.dir/build
+        Building C object CMakeFiles/cmTC_974be.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_974be.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_974be.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_974be.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
         Apple clang version 17.0.0 (clang-1700.3.19.1)
         Target: arm64-apple-darwin25.0.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
         clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
-         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=26.0 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-mxhpcM -target-linker-version 1221.4 -v -fcoverage-compilation-dir=/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-mxhpcM -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_78234.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_78234.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_78234.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
+         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=26.0 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-CkJLD1 -target-linker-version 1221.4 -v -fcoverage-compilation-dir=/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-CkJLD1 -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_974be.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_974be.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_974be.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
         clang -cc1 version 17.0.0 (clang-1700.3.19.1) default target arm64-apple-darwin25.0.0
         ignoring nonexistent directory "/usr/local/include"
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"
@@ -1354,13 +1511,13 @@ events:
          /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)
          /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks (framework directory)
         End of search list.
-        Linking C executable cmTC_78234
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_78234.dir/link.txt --verbose=1
+        Linking C executable cmTC_974be
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_974be.dir/link.txt --verbose=1
         Apple clang version 17.0.0 (clang-1700.3.19.1)
         Target: arm64-apple-darwin25.0.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_78234 -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_78234.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a
+         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_974be -L/opt/homebrew/lib -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_974be.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a
         @(#)PROGRAM:ld PROJECT:ld-1221.4
         BUILD 16:29:08 Aug 11 2025
         configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main
@@ -1368,11 +1525,12 @@ events:
         LTO support using: LLVM version 17.0.0 (static support for 29, runtime is 29)
         TAPI support using: Apple TAPI version 17.0.0 (tapi-1700.3.8)
         Library search paths:
+        	/opt/homebrew/lib
         	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
         	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift
         Framework search paths:
         	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks
-        /usr/bin/cc  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_78234.dir/CMakeCCompilerABI.c.o -o cmTC_78234
+        /usr/bin/cc  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/opt/homebrew/lib -v -Wl,-v CMakeFiles/cmTC_974be.dir/CMakeCCompilerABI.c.o -o cmTC_974be
         
       exitCode: 0
   -
@@ -1380,7 +1538,7 @@ events:
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:122 (message)"
       - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     message: |
       Effective list of requested architectures (possibly empty)  : ""
       Effective list of architectures found in the ABI info binary: "arm64"
@@ -1389,7 +1547,7 @@ events:
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
       - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     message: |
       Parsed C implicit include dir info: rv=done
         found start of include info
@@ -1409,23 +1567,23 @@ events:
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
       - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     message: |
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-mxhpcM']
+        ignore line: [Change Dir: '/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-CkJLD1']
         ignore line: []
-        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_78234/fast]
-        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_78234.dir/build.make CMakeFiles/cmTC_78234.dir/build]
-        ignore line: [Building C object CMakeFiles/cmTC_78234.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/usr/bin/cc   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_78234.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_78234.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_78234.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_974be/fast]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_974be.dir/build.make CMakeFiles/cmTC_974be.dir/build]
+        ignore line: [Building C object CMakeFiles/cmTC_974be.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_974be.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_974be.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_974be.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [Apple clang version 17.0.0 (clang-1700.3.19.1)]
         ignore line: [Target: arm64-apple-darwin25.0.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
         ignore line: [clang: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
-        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=26.0 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-mxhpcM -target-linker-version 1221.4 -v -fcoverage-compilation-dir=/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-mxhpcM -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_78234.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_78234.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_78234.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=26.0 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-CkJLD1 -target-linker-version 1221.4 -v -fcoverage-compilation-dir=/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-CkJLD1 -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_974be.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_974be.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_974be.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [clang -cc1 version 17.0.0 (clang-1700.3.19.1) default target arm64-apple-darwin25.0.0]
         ignore line: [ignoring nonexistent directory "/usr/local/include"]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"]
@@ -1438,13 +1596,13 @@ events:
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)]
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks (framework directory)]
         ignore line: [End of search list.]
-        ignore line: [Linking C executable cmTC_78234]
-        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_78234.dir/link.txt --verbose=1]
+        ignore line: [Linking C executable cmTC_974be]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_974be.dir/link.txt --verbose=1]
         ignore line: [Apple clang version 17.0.0 (clang-1700.3.19.1)]
         ignore line: [Target: arm64-apple-darwin25.0.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
-        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_78234 -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_78234.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
+        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_974be -L/opt/homebrew/lib -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_974be.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
           arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
           arg [-demangle] ==> ignore
           arg [-lto_library] ==> ignore, skip following value
@@ -1461,26 +1619,29 @@ events:
           arg [-mllvm] ==> ignore
           arg [-enable-linkonceodr-outlining] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_78234] ==> ignore
+          arg [cmTC_974be] ==> ignore
+          arg [-L/opt/homebrew/lib] ==> dir [/opt/homebrew/lib]
           arg [-L/usr/local/lib] ==> dir [/usr/local/lib]
           arg [-search_paths_first] ==> ignore
           arg [-headerpad_max_install_names] ==> ignore
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_78234.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [CMakeFiles/cmTC_974be.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lSystem] ==> lib [System]
           arg [/Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
         linker tool for 'C': /Library/Developer/CommandLineTools/usr/bin/ld
-        Library search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift]
+        Library search paths: [;/opt/homebrew/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift]
         Framework search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks]
         remove lib [System]
         remove lib [/Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
+        collapse library dir [/opt/homebrew/lib] ==> [/opt/homebrew/lib]
         collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
+        collapse library dir [/opt/homebrew/lib] ==> [/opt/homebrew/lib]
         collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib]
         collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift]
         collapse framework dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks]
         implicit libs: []
         implicit objs: []
-        implicit dirs: [/usr/local/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift]
+        implicit dirs: [/opt/homebrew/lib;/usr/local/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift]
         implicit fwks: [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks]
       
       
@@ -1490,7 +1651,7 @@ events:
       - "/opt/homebrew/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
       - "/opt/homebrew/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     message: |
       Running the C compiler's linker: "/Library/Developer/CommandLineTools/usr/bin/ld" "-v"
       @(#)PROGRAM:ld PROJECT:ld-1221.4
@@ -1504,16 +1665,17 @@ events:
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
       - "/opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-JacoL3"
-      binary: "/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-JacoL3"
+      source: "/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-kYkRBA"
+      binary: "/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-kYkRBA"
     cmakeVariables:
-      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS: "-I/opt/homebrew/include"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
-      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: "-L/opt/homebrew/lib"
       CMAKE_OSX_ARCHITECTURES: ""
       CMAKE_OSX_DEPLOYMENT_TARGET: ""
       CMAKE_OSX_SYSROOT: ""
@@ -1521,25 +1683,26 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-JacoL3'
+        Change Dir: '/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-kYkRBA'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_2c57d/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_2c57d.dir/build.make CMakeFiles/cmTC_2c57d.dir/build
-        Building CXX object CMakeFiles/cmTC_2c57d.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_2c57d.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_2c57d.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_2c57d.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_17973/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_17973.dir/build.make CMakeFiles/cmTC_17973.dir/build
+        Building CXX object CMakeFiles/cmTC_17973.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -I/opt/homebrew/include  -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_17973.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_17973.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_17973.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Apple clang version 17.0.0 (clang-1700.3.19.1)
         Target: arm64-apple-darwin25.0.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
         clang++: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"
-         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=26.0 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-JacoL3 -target-linker-version 1221.4 -v -fcoverage-compilation-dir=/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-JacoL3 -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_2c57d.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_2c57d.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_2c57d.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=26.0 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-kYkRBA -target-linker-version 1221.4 -v -fcoverage-compilation-dir=/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-kYkRBA -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_17973.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_17973.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I /opt/homebrew/include -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_17973.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         clang -cc1 version 17.0.0 (clang-1700.3.19.1) default target arm64-apple-darwin25.0.0
         ignoring nonexistent directory "/usr/local/include"
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
         #include "..." search starts here:
         #include <...> search starts here:
+         /opt/homebrew/include
          /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1
          /Library/Developer/CommandLineTools/usr/lib/clang/17/include
          /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
@@ -1547,13 +1710,13 @@ events:
          /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)
          /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks (framework directory)
         End of search list.
-        Linking CXX executable cmTC_2c57d
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2c57d.dir/link.txt --verbose=1
+        Linking CXX executable cmTC_17973
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_17973.dir/link.txt --verbose=1
         Apple clang version 17.0.0 (clang-1700.3.19.1)
         Target: arm64-apple-darwin25.0.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_2c57d -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_2c57d.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a
+         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_17973 -L/opt/homebrew/lib -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_17973.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a
         @(#)PROGRAM:ld PROJECT:ld-1221.4
         BUILD 16:29:08 Aug 11 2025
         configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em armv8m.main armv8.1m.main
@@ -1561,11 +1724,12 @@ events:
         LTO support using: LLVM version 17.0.0 (static support for 29, runtime is 29)
         TAPI support using: Apple TAPI version 17.0.0 (tapi-1700.3.8)
         Library search paths:
+        	/opt/homebrew/lib
         	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
         	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift
         Framework search paths:
         	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks
-        /usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_2c57d.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_2c57d
+        /usr/bin/c++ -I/opt/homebrew/include  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/opt/homebrew/lib -v -Wl,-v CMakeFiles/cmTC_17973.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_17973
         
       exitCode: 0
   -
@@ -1573,7 +1737,7 @@ events:
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:122 (message)"
       - "/opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     message: |
       Effective list of requested architectures (possibly empty)  : ""
       Effective list of architectures found in the ABI info binary: "arm64"
@@ -1582,21 +1746,23 @@ events:
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
       - "/opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     message: |
       Parsed CXX implicit include dir info: rv=done
         found start of include info
         found start of implicit include info
+          add: [/opt/homebrew/include]
           add: [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1]
           add: [/Library/Developer/CommandLineTools/usr/lib/clang/17/include]
           add: [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
           add: [/Library/Developer/CommandLineTools/usr/include]
         end of search list found
+        collapse include dir [/opt/homebrew/include] ==> [/opt/homebrew/include]
         collapse include dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1]
         collapse include dir [/Library/Developer/CommandLineTools/usr/lib/clang/17/include] ==> [/Library/Developer/CommandLineTools/usr/lib/clang/17/include]
         collapse include dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
         collapse include dir [/Library/Developer/CommandLineTools/usr/include] ==> [/Library/Developer/CommandLineTools/usr/include]
-        implicit include dirs: [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1;/Library/Developer/CommandLineTools/usr/lib/clang/17/include;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include;/Library/Developer/CommandLineTools/usr/include]
+        implicit include dirs: [/opt/homebrew/include;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1;/Library/Developer/CommandLineTools/usr/lib/clang/17/include;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include;/Library/Developer/CommandLineTools/usr/include]
       
       
   -
@@ -1604,30 +1770,31 @@ events:
     backtrace:
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
       - "/opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-JacoL3']
+        ignore line: [Change Dir: '/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-kYkRBA']
         ignore line: []
-        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_2c57d/fast]
-        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_2c57d.dir/build.make CMakeFiles/cmTC_2c57d.dir/build]
-        ignore line: [Building CXX object CMakeFiles/cmTC_2c57d.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_2c57d.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_2c57d.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_2c57d.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_17973/fast]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_17973.dir/build.make CMakeFiles/cmTC_17973.dir/build]
+        ignore line: [Building CXX object CMakeFiles/cmTC_17973.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -I/opt/homebrew/include  -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_17973.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_17973.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_17973.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Apple clang version 17.0.0 (clang-1700.3.19.1)]
         ignore line: [Target: arm64-apple-darwin25.0.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
         ignore line: [clang++: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"]
-        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=26.0 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-JacoL3 -target-linker-version 1221.4 -v -fcoverage-compilation-dir=/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-JacoL3 -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_2c57d.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_2c57d.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_2c57d.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx26.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=26.0 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-kYkRBA -target-linker-version 1221.4 -v -fcoverage-compilation-dir=/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/CMakeScratch/TryCompile-kYkRBA -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_17973.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_17973.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I /opt/homebrew/include -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks -internal-iframework /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_17973.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [clang -cc1 version 17.0.0 (clang-1700.3.19.1) default target arm64-apple-darwin25.0.0]
         ignore line: [ignoring nonexistent directory "/usr/local/include"]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"]
         ignore line: [#include "..." search starts here:]
         ignore line: [#include <...> search starts here:]
+        ignore line: [ /opt/homebrew/include]
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1]
         ignore line: [ /Library/Developer/CommandLineTools/usr/lib/clang/17/include]
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include]
@@ -1635,13 +1802,13 @@ events:
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)]
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks (framework directory)]
         ignore line: [End of search list.]
-        ignore line: [Linking CXX executable cmTC_2c57d]
-        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2c57d.dir/link.txt --verbose=1]
+        ignore line: [Linking CXX executable cmTC_17973]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_17973.dir/link.txt --verbose=1]
         ignore line: [Apple clang version 17.0.0 (clang-1700.3.19.1)]
         ignore line: [Target: arm64-apple-darwin25.0.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
-        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_2c57d -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_2c57d.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
+        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 26.0.0 26.0 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_17973 -L/opt/homebrew/lib -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_17973.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
           arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
           arg [-demangle] ==> ignore
           arg [-lto_library] ==> ignore, skip following value
@@ -1658,27 +1825,30 @@ events:
           arg [-mllvm] ==> ignore
           arg [-enable-linkonceodr-outlining] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_2c57d] ==> ignore
+          arg [cmTC_17973] ==> ignore
+          arg [-L/opt/homebrew/lib] ==> dir [/opt/homebrew/lib]
           arg [-L/usr/local/lib] ==> dir [/usr/local/lib]
           arg [-search_paths_first] ==> ignore
           arg [-headerpad_max_install_names] ==> ignore
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_2c57d.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_17973.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lc++] ==> lib [c++]
           arg [-lSystem] ==> lib [System]
           arg [/Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
         linker tool for 'CXX': /Library/Developer/CommandLineTools/usr/bin/ld
-        Library search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift]
+        Library search paths: [;/opt/homebrew/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift]
         Framework search paths: [;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks]
         remove lib [System]
         remove lib [/Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
+        collapse library dir [/opt/homebrew/lib] ==> [/opt/homebrew/lib]
         collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
+        collapse library dir [/opt/homebrew/lib] ==> [/opt/homebrew/lib]
         collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib]
         collapse library dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift]
         collapse framework dir [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks] ==> [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks]
         implicit libs: [c++]
         implicit objs: []
-        implicit dirs: [/usr/local/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift]
+        implicit dirs: [/opt/homebrew/lib;/usr/local/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift]
         implicit fwks: [/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks]
       
       
@@ -1688,7 +1858,7 @@ events:
       - "/opt/homebrew/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
       - "/opt/homebrew/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
       - "/opt/homebrew/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     message: |
       Running the CXX compiler's linker: "/Library/Developer/CommandLineTools/usr/bin/ld" "-v"
       @(#)PROGRAM:ld PROJECT:ld-1221.4
@@ -1697,80 +1867,27 @@ events:
       will use ld-classic for: armv6 armv7 armv7s i386 armv6m armv7k armv7m armv7em
       LTO support using: LLVM version 17.0.0 (static support for 29, runtime is 29)
       TAPI support using: Apple TAPI version 17.0.0 (tapi-1700.3.8)
-...
-
----
-events:
   -
-    kind: "find_package-v1"
+    kind: "find-v1"
     backtrace:
-      - "/opt/homebrew/opt/boost/lib/cmake/Boost-1.89.0/BoostConfig.cmake:141 (find_package)"
-      - "/opt/homebrew/opt/boost/lib/cmake/Boost-1.89.0/BoostConfig.cmake:215 (boost_find_component)"
-      - "CMakeLists.txt:8 (find_package)"
-    name: "boost_headers"
-    configs:
-      -
-        filename: "boost_headersConfig.cmake"
-        kind: "cmake"
-      -
-        filename: "boost_headers-config.cmake"
-        kind: "cmake"
-    version_request:
-      version: "1.89.0"
-      version_complete: "1.89.0"
-      exact: true
+      - "CMakeLists.txt:23 (find_library)"
+    mode: "library"
+    variable: "GMP_LIBRARY"
+    description: "Path to a library."
     settings:
-      required: "required_explicit"
-      quiet: false
-      global: false
-      policy_scope: true
-      bypass_provider: false
-      hints:
-        - "/opt/homebrew/opt/boost/lib/cmake"
-      names:
-        - "boost_headers"
-      path_suffixes:
-        - ""
-      paths:
-        CMAKE_FIND_USE_CMAKE_PATH: true
-        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-        CMAKE_FIND_USE_INSTALL_PREFIX: true
-        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
-        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
-        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
-        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
-    candidates:
-      -
-        path: "/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/pkgRedirects/boost_headersConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/pkgRedirects/boost_headers-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/boost_headersConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/boost_headers-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_headers-1.89.0/boost_headersConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-    found:
-      path: "/opt/homebrew/opt/boost/lib/cmake/boost_headers-1.89.0/boost_headers-config.cmake"
-      mode: "config"
-      version: "1.89.0"
+      SearchFramework: "FIRST"
+      SearchAppBundle: "FIRST"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gmp"
+    candidate_directories:
+      - "/opt/homebrew/lib/"
+    found: "/opt/homebrew/lib/libgmp.dylib"
     search_context:
-      package_stack:
-        -
-          package_paths:
-            - "/opt/homebrew/opt/boost"
       ENV{PATH}:
         - "/Users/nathanmaglasang/.pyenv/shims"
         - "/Users/nathanmaglasang/.pyenv/bin"
@@ -1790,6 +1907,10 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Applications/nmap.app/Contents/Resources/bin"
+        - "/Applications/ncat.app/Contents/Resources/bin"
+        - "/Applications/nping.app/Contents/Resources/bin"
+        - "/Applications/zenmap.app/Contents/Resources/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -1804,6 +1925,8 @@ events:
         - "/opt"
         - "/sw"
         - "/opt/local"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
       CMAKE_SYSTEM_FRAMEWORK_PATH:
         - "~/Library/Frameworks"
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
@@ -1815,268 +1938,25 @@ events:
         - "/Network/Library/Frameworks"
         - "/System/Library/Frameworks"
   -
-    kind: "find_package-v1"
+    kind: "find-v1"
     backtrace:
-      - "CMakeLists.txt:8 (find_package)"
-    name: "Boost"
-    configs:
-      -
-        filename: "BoostConfig.cmake"
-        kind: "cmake"
-      -
-        filename: "boost-config.cmake"
-        kind: "cmake"
-    version_request:
-      exact: false
+      - "CMakeLists.txt:24 (find_library)"
+    mode: "library"
+    variable: "GMPXX_LIBRARY"
+    description: "Path to a library."
     settings:
-      required: "required_explicit"
-      quiet: false
-      global: false
-      policy_scope: true
-      bypass_provider: false
-      names:
-        - "Boost"
-      path_suffixes:
-        - ""
-      paths:
-        CMAKE_FIND_USE_CMAKE_PATH: true
-        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-        CMAKE_FIND_USE_INSTALL_PREFIX: true
-        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
-        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
-        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
-        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
-    candidates:
-      -
-        path: "/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/pkgRedirects/BoostConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/pkgRedirects/boost-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/BoostConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/boost-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_stacktrace_addr2line-1.89.0/BoostConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_stacktrace_addr2line-1.89.0/boost-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_wserialization-1.89.0/BoostConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_wserialization-1.89.0/boost-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_type_erasure-1.89.0/BoostConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_type_erasure-1.89.0/boost-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_date_time-1.89.0/BoostConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_date_time-1.89.0/boost-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_math_tr1f-1.89.0/BoostConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_math_tr1f-1.89.0/boost-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_container-1.89.0/BoostConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_container-1.89.0/boost-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_graph_parallel-1.89.0/BoostConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_graph_parallel-1.89.0/boost-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_log_setup-1.89.0/BoostConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_log_setup-1.89.0/boost-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_json-1.89.0/BoostConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_json-1.89.0/boost-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_regex-1.89.0/BoostConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_regex-1.89.0/boost-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_stacktrace_basic-1.89.0/BoostConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_stacktrace_basic-1.89.0/boost-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_thread-1.89.0/BoostConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_thread-1.89.0/boost-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_math_tr1l-1.89.0/BoostConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_math_tr1l-1.89.0/boost-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_random-1.89.0/BoostConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_random-1.89.0/boost-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_coroutine-1.89.0/BoostConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_coroutine-1.89.0/boost-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_log-1.89.0/BoostConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_log-1.89.0/boost-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_context-1.89.0/BoostConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_context-1.89.0/boost-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_program_options-1.89.0/BoostConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_program_options-1.89.0/boost-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_headers-1.89.0/BoostConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_headers-1.89.0/boost-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_filesystem-1.89.0/BoostConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_filesystem-1.89.0/boost-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_test_exec_monitor-1.89.0/BoostConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_test_exec_monitor-1.89.0/boost-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_unit_test_framework-1.89.0/BoostConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_unit_test_framework-1.89.0/boost-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_process-1.89.0/BoostConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_process-1.89.0/boost-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_graph-1.89.0/BoostConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_graph-1.89.0/boost-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_fiber-1.89.0/BoostConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_fiber-1.89.0/boost-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_stacktrace_noop-1.89.0/BoostConfig.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/opt/boost/lib/cmake/boost_stacktrace_noop-1.89.0/boost-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-    found:
-      path: "/opt/homebrew/opt/boost/lib/cmake/Boost-1.89.0/BoostConfig.cmake"
-      mode: "config"
-      version: "1.89.0"
+      SearchFramework: "FIRST"
+      SearchAppBundle: "FIRST"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gmpxx"
+    candidate_directories:
+      - "/opt/homebrew/lib/"
+    found: "/opt/homebrew/lib/libgmpxx.dylib"
     search_context:
       ENV{PATH}:
         - "/Users/nathanmaglasang/.pyenv/shims"
@@ -2097,6 +1977,10 @@ events:
         - "/Applications/VMware Fusion.app/Contents/Public"
         - "/usr/local/share/dotnet"
         - "~/.dotnet/tools"
+        - "/Applications/nmap.app/Contents/Resources/bin"
+        - "/Applications/ncat.app/Contents/Resources/bin"
+        - "/Applications/nping.app/Contents/Resources/bin"
+        - "/Applications/zenmap.app/Contents/Resources/bin"
       CMAKE_INSTALL_PREFIX: "/usr/local"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
@@ -2111,6 +1995,8 @@ events:
         - "/opt"
         - "/sw"
         - "/opt/local"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
       CMAKE_SYSTEM_FRAMEWORK_PATH:
         - "~/Library/Frameworks"
         - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"

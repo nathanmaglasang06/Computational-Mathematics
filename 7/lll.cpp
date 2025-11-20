@@ -1,138 +1,210 @@
-//
-// Created by Nathan Maglasang on 7/11/2025.
-//
 #include <iostream>
-#include <vector>
-#include <boost/rational.hpp>
-#include <cmath>
-#include <stdexcept>
-#include <algorithm>
+#include <iomanip>
+#include <gmpxx.h>
+#include "llllib.h"
 
-using std::vector;
-using boost::rational;
-
-using Frac = rational<long long>;
-
-// ─── Basic Vector Helpers ────────────────────────────────────────────────
-
-Frac dot(const vector<Frac>& u, const vector<Frac>& v) {
-    Frac sum = 0;
-    for (size_t i = 0; i < u.size(); ++i)
-        sum += u[i] * v[i];
-    return sum;
+void printVector(const std::vector<mpz_class>& v, const std::string& name) {
+    std::cout << name << " = [";
+    for (size_t i = 0; i < v.size(); i++) {
+        std::cout << v[i];
+        if (i < v.size() - 1) std::cout << ", ";
+    }
+    std::cout << "]" << std::endl;
 }
 
-vector<Frac> scalar_mult(const Frac& c, const vector<Frac>& v) {
-    vector<Frac> result(v.size());
-    for (size_t i = 0; i < v.size(); ++i)
-        result[i] = c * v[i];
-    return result;
+void printRationalVector(const Vector& v, const std::string& name) {
+    std::cout << name << " = [";
+    for (size_t i = 0; i < v.size(); i++) {
+        std::cout << v[i];
+        if (i < v.size() - 1) std::cout << ", ";
+    }
+    std::cout << "]" << std::endl;
 }
 
-vector<Frac> vector_sub(const vector<Frac>& u, const vector<Frac>& v) {
-    vector<Frac> result(u.size());
-    for (size_t i = 0; i < u.size(); ++i)
-        result[i] = u[i] - v[i];
-    return result;
-}
-
-long long frac_round(const Frac& frac) {
-    long long n = frac.numerator();
-    long long d = frac.denominator();
-    return (2 * n + d) / (2 * d);
-}
-
-// ─── Gram–Schmidt + LLL (Fixed to 3D) ────────────────────────────────────
-
-struct GSResult {
-    vector<vector<Frac>> mu;
-    vector<vector<Frac>> Bstar;
-    vector<Frac> normsq;
-};
-
-GSResult gram_schmidt(const vector<vector<Frac>>& B) {
-    size_t n = B.size();
-    vector<vector<Frac>> mu(n, vector<Frac>(n, 0));
-    vector<vector<Frac>> Bstar(n);
-    vector<Frac> normsq(n);
-
-    for (size_t i = 0; i < n; ++i) {
-        vector<Frac> v = B[i];
-        for (size_t j = 0; j < i; ++j) {
-            mu[i][j] = dot(B[i], Bstar[j]) / normsq[j];
-            vector<Frac> sub = scalar_mult(mu[i][j], Bstar[j]);
-            v = vector_sub(v, sub);
+void printMatrix(const std::vector<Vector>& M, const std::string& name) {
+    std::cout << name << ":" << std::endl;
+    for (size_t i = 0; i < M.size(); i++) {
+        std::cout << "  [";
+        for (size_t j = 0; j < M[i].size(); j++) {
+            std::cout << M[i][j];
+            if (j < M[i].size() - 1) std::cout << ", ";
         }
-        Bstar[i] = v;
-        normsq[i] = dot(v, v);
-        if (normsq[i] == 0)
-            throw std::runtime_error("Input basis is linearly dependent.");
+        std::cout << "]" << std::endl;
+    }
+}
+
+void testBasicOperations() {
+    std::cout << "=== Testing Basic Vector Operations ===" << std::endl;
+
+    Vector u = {Rational(1), Rational(2), Rational(3)};
+    Vector v = {Rational(4), Rational(5), Rational(6)};
+
+    printRationalVector(u, "u");
+    printRationalVector(v, "v");
+
+    Rational d = dot(u, v);
+    std::cout << "dot(u, v) = " << d << std::endl;
+    std::cout << "Expected: 1*4 + 2*5 + 3*6 = 32" << std::endl;
+
+    Vector scaled = scalar_mult(Rational(2), u);
+    printRationalVector(scaled, "2 * u");
+
+    Vector diff = vector_sub(v, u);
+    printRationalVector(diff, "v - u");
+    std::cout << std::endl;
+}
+
+void testFracRound() {
+    std::cout << "=== Testing frac_round ===" << std::endl;
+
+    std::vector<std::pair<Rational, int>> tests = {
+        {Rational(5, 2), 3},      // 2.5 -> 3 (round half up)
+        {Rational(-5, 2), -3},    // -2.5 -> -3
+        {Rational(7, 3), 2},      // 2.333... -> 2
+        {Rational(8, 3), 3},      // 2.666... -> 3
+        {Rational(1, 2), 1},      // 0.5 -> 1
+        {Rational(-1, 2), -1}     // -0.5 -> -1
+    };
+
+    for (const auto& [frac, expected] : tests) {
+        mpz_class result = frac_round(frac);
+        std::cout << "frac_round(" << frac << ") = " << result
+                  << " (expected: " << expected << ")"
+                  << (result == expected ? " ✓" : " ✗") << std::endl;
+    }
+    std::cout << std::endl;
+}
+
+void testGramSchmidt() {
+    std::cout << "=== Testing Gram-Schmidt ===" << std::endl;
+
+    std::vector<Vector> B = {
+        {Rational(3), Rational(1), Rational(0)},
+        {Rational(2), Rational(2), Rational(0)},
+        {Rational(0), Rational(0), Rational(1)}
+    };
+
+    printMatrix(B, "Input basis B");
+
+    auto [mu, Bstar, normsq] = gram_schmidt(B);
+
+    std::cout << "\nGram-Schmidt orthogonalization:" << std::endl;
+    printMatrix(Bstar, "B* (orthogonal basis)");
+
+    std::cout << "\nNorm squared:" << std::endl;
+    for (size_t i = 0; i < normsq.size(); i++) {
+        std::cout << "  ||B*[" << i << "]||^2 = " << normsq[i] << std::endl;
     }
 
-    return {mu, Bstar, normsq};
-}
-
-vector<vector<Frac>> lll1(vector<vector<Frac>> B, Frac delta = Frac(9999, 10000)) {
-    auto [mu, Bstar, normsq] = gram_schmidt(B);
-    size_t k = 1;
-
-    while (k < 3) {
-        for (int j = (int)k - 1; j >= 0; --j) {
-            long long q = frac_round(mu[k][j]);
-            if (q != 0) {
-                auto sub = scalar_mult(Frac(q), B[j]);
-                B[k] = vector_sub(B[k], sub);
+    std::cout << "\nMu coefficients:" << std::endl;
+    for (size_t i = 0; i < mu.size(); i++) {
+        for (size_t j = 0; j < mu[i].size(); j++) {
+            if (j < i) {
+                std::cout << "  mu[" << i << "][" << j << "] = " << mu[i][j] << std::endl;
             }
         }
-        std::tie(mu, Bstar, normsq) = gram_schmidt(B);
+    }
+    std::cout << std::endl;
+}
 
-        if (normsq[k] >= (delta - mu[k][k - 1] * mu[k][k - 1]) * normsq[k - 1])
-            ++k;
-        else {
-            std::swap(B[k], B[k - 1]);
-            std::tie(mu, Bstar, normsq) = gram_schmidt(B);
-            k = std::max<size_t>(k - 1, 1);
-        }
+void testLLL1Direct() {
+    std::cout << "=== Testing lll1 (direct, no scaling) ===" << std::endl;
+
+    // Simple test case
+    std::vector<Vector> B = {
+        {Rational(1), Rational(1), Rational(1)},
+        {Rational(-1), Rational(0), Rational(2)},
+        {Rational(3), Rational(5), Rational(6)}
+    };
+
+    printMatrix(B, "Input basis B");
+
+    auto reduced = lll1(B);
+
+    printMatrix(reduced, "LLL-reduced basis");
+
+    // Check norms
+    std::cout << "\nVector norms:" << std::endl;
+    for (size_t i = 0; i < reduced.size(); i++) {
+        Rational norm = dot(reduced[i], reduced[i]);
+        std::cout << "  ||v[" << i << "]||^2 = " << norm << std::endl;
+    }
+    std::cout << std::endl;
+}
+
+void testScaledLLL() {
+    std::cout << "=== Testing Scaled LLL (Task 1 example) ===" << std::endl;
+
+    std::vector<std::vector<mpz_class>> M = {
+        {mpz_class(52563), mpz_class(52456), mpz_class(71853)},
+        {mpz_class(43532), mpz_class(76933), mpz_class(35257)},
+        {mpz_class(36923), mpz_class(37276), mpz_class(42678)}
+    };
+
+    std::cout << "Input matrix M:" << std::endl;
+    for (const auto& row : M) {
+        std::cout << "  [" << row[0] << ", " << row[1] << ", " << row[2] << "]" << std::endl;
     }
 
-    return B;
+    // Test without scaling first (X=1)
+    std::cout << "\n--- Testing with X = 1 (no effective scaling) ---" << std::endl;
+    auto result1 = lll(M, mpz_class(1));
+    printVector(result1, "Result");
+    std::cout << "Expected: [5643, 6916, -15672]" << std::endl;
+
+    // Now let's manually trace through what the scaling does
+    std::cout << "\n--- Manual trace of scaling process ---" << std::endl;
+    mpz_class X = 1;
+    mpz_class X2 = X * X;
+
+    std::cout << "Scaling factors: X^2 = " << X2 << ", X = " << X << ", 1 = 1" << std::endl;
+
+    std::vector<Vector> scaled(3, Vector(3));
+    for (int i = 0; i < 3; ++i) {
+        scaled[i][0] = Rational(X2 * M[i][0]);
+        scaled[i][1] = Rational(X * M[i][1]);
+        scaled[i][2] = Rational(M[i][2]);
+    }
+
+    printMatrix(scaled, "Scaled matrix");
+
+    std::cout << "\nRunning LLL on scaled matrix..." << std::endl;
+    auto reduced = lll1(scaled);
+    printMatrix(reduced, "LLL reduced (scaled)");
+
+    std::cout << "\nUnscaling first vector..." << std::endl;
+    Vector v0 = reduced[0];
+    Rational temp0 = v0[0] / Rational(X2);
+    Rational temp1 = v0[1] / Rational(X);
+    Rational temp2 = v0[2];
+
+    std::cout << "v0[0] / X^2 = " << v0[0] << " / " << X2 << " = " << temp0 << std::endl;
+    std::cout << "v0[1] / X = " << v0[1] << " / " << X << " = " << temp1 << std::endl;
+    std::cout << "v0[2] = " << temp2 << std::endl;
+
+    std::cout << "\nConverting to integers..." << std::endl;
+    mpz_class r0 = temp0.get_num();
+    mpz_class r1 = temp1.get_num();
+    mpz_class r2 = temp2.get_num();
+
+    std::cout << "Result: [" << r0 << ", " << r1 << ", " << r2 << "]" << std::endl;
+    std::cout << "Expected: [5643, 6916, -15672]" << std::endl;
+
+    // Check if it's a valid combination
+    std::cout << "\n--- Verification ---" << std::endl;
+    std::cout << "Checking if result is an integer combination of input vectors..." << std::endl;
+
+    std::cout << std::endl;
 }
-
-// ─── Scaled LLL (Coppersmith Lattice) ───────────────────────────────────
-
-vector<long long> lll_scaled(const vector<vector<long long>>& B, long long X, Frac delta = Frac(9999, 10000)) {
-    Frac Xf(X);
-    Frac X2 = Xf * Xf;
-
-    vector<vector<Frac>> scaled = {
-        {X2 * B[0][0], Xf * B[0][1], Frac(B[0][2])},
-        {X2 * B[1][0], Xf * B[1][1], Frac(B[1][2])},
-        {X2 * B[2][0], Xf * B[2][1], Frac(B[2][2])}
-    };
-
-    auto reduced = lll1(scaled, delta);
-    Frac v0 = reduced[0][0];
-    Frac v1 = reduced[0][1];
-    Frac v2 = reduced[0][2];
-
-    long long r0 = (v0 / X2).numerator() / (v0 / X2).denominator();
-    long long r1 = (v1 / Xf).numerator() / (v1 / Xf).denominator();
-    long long r2 = v2.numerator() / v2.denominator();
-
-    return {r0, r1, r2};
-}
-
-// ─── Demo ────────────────────────────────────────────────────────────────
 
 int main() {
-    vector<vector<long long>> B = {
-        {1, 0, 123},
-        {0, 1, 456},
-        {0, 0, 789}
-    };
-    long long X = 1000;
+    std::cout << std::fixed << std::setprecision(6);
 
-    auto v = lll_scaled(B, X);
-    std::cout << "[" << v[0] << ", " << v[1] << ", " << v[2] << "]" << std::endl;
+    testBasicOperations();
+    testFracRound();
+    testGramSchmidt();
+    testLLL1Direct();
+    testScaledLLL();
+
     return 0;
 }

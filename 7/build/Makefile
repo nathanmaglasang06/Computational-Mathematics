@@ -92,13 +92,6 @@ all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles 0
 .PHONY : all
 
-# The main codegen target
-codegen: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles /Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 codegen
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles 0
-.PHONY : codegen
-
 # The main clean target
 clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
@@ -137,6 +130,19 @@ llllib/fast:
 .PHONY : llllib/fast
 
 #=============================================================================
+# Target rules for targets named lab7
+
+# Build rule for target.
+lab7: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lab7
+.PHONY : lab7
+
+# fast build rule for target.
+lab7/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab7.dir/build.make CMakeFiles/lab7.dir/build
+.PHONY : lab7/fast
+
+#=============================================================================
 # Target rules for targets named Task1
 
 # Build rule for target.
@@ -148,6 +154,30 @@ Task1: cmake_check_build_system
 Task1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Task1.dir/build.make CMakeFiles/Task1.dir/build
 .PHONY : Task1/fast
+
+lll.o: lll.cpp.o
+.PHONY : lll.o
+
+# target to build an object file
+lll.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Task1.dir/build.make CMakeFiles/Task1.dir/lll.cpp.o
+.PHONY : lll.cpp.o
+
+lll.i: lll.cpp.i
+.PHONY : lll.i
+
+# target to preprocess a source file
+lll.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Task1.dir/build.make CMakeFiles/Task1.dir/lll.cpp.i
+.PHONY : lll.cpp.i
+
+lll.s: lll.cpp.s
+.PHONY : lll.s
+
+# target to generate assembly for a file
+lll.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Task1.dir/build.make CMakeFiles/Task1.dir/lll.cpp.s
+.PHONY : lll.cpp.s
 
 llllib.o: llllib.cpp.o
 .PHONY : llllib.o
@@ -178,7 +208,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Task1.dir/build.make CMakeFiles/Task1.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab7.dir/build.make CMakeFiles/lab7.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -186,7 +216,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Task1.dir/build.make CMakeFiles/Task1.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab7.dir/build.make CMakeFiles/lab7.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -194,7 +224,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Task1.dir/build.make CMakeFiles/Task1.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab7.dir/build.make CMakeFiles/lab7.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -203,11 +233,14 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... codegen"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Task1"
+	@echo "... lab7"
 	@echo "... llllib"
+	@echo "... lll.o"
+	@echo "... lll.i"
+	@echo "... lll.s"
 	@echo "... llllib.o"
 	@echo "... llllib.i"
 	@echo "... llllib.s"

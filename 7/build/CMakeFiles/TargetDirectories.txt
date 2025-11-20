@@ -1,4 +1,5 @@
 /Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/llllib.dir
+/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/lab7.dir
 /Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/Task1.dir
 /Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/edit_cache.dir
 /Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles/rebuild_cache.dir

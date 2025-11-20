@@ -1,104 +1,126 @@
-//
-// Created by Nathan Maglasang on 7/11/2025.
-//
-#include <iostream>
-#include <vector>
-#include <boost/rational.hpp>
 #include "llllib.h"
-#include <cmath>
 #include <stdexcept>
 #include <algorithm>
 
-using std::vector;
-using boost::rational;
-
-using Frac = rational<long long>;
-
 // ─── Basic Vector Helpers ────────────────────────────────────────────────
 
-Frac dot(const vector<Frac>& u, const vector<Frac>& v) {
-    Frac sum = 0;
-    for (size_t i = 0; i < u.size(); ++i)
+Rational dot(const Vector& u, const Vector& v) {
+    if (u.size() != v.size()) {
+        throw std::invalid_argument("Vectors must have same length");
+    }
+    Rational sum = 0;
+    for (size_t i = 0; i < u.size(); ++i) {
         sum += u[i] * v[i];
+    }
     return sum;
 }
 
-vector<Frac> scalar_mult(const Frac& c, const vector<Frac>& v) {
-    vector<Frac> result(v.size());
-    for (size_t i = 0; i < v.size(); ++i)
+Vector scalar_mult(const Rational& c, const Vector& v) {
+    Vector result(v.size());
+    for (size_t i = 0; i < v.size(); ++i) {
         result[i] = c * v[i];
+    }
     return result;
 }
 
-vector<Frac> vector_sub(const vector<Frac>& u, const vector<Frac>& v) {
-    vector<Frac> result(u.size());
-    for (size_t i = 0; i < u.size(); ++i)
+Vector vector_sub(const Vector& u, const Vector& v) {
+    if (u.size() != v.size()) {
+        throw std::invalid_argument("Vectors must have same length");
+    }
+    Vector result(u.size());
+    for (size_t i = 0; i < u.size(); ++i) {
         result[i] = u[i] - v[i];
+    }
     return result;
 }
 
-long long frac_round(const Frac& frac) {
-    long long n = frac.numerator();
-    long long d = frac.denominator();
-    return (2 * n + d) / (2 * d);
+mpz_class frac_round(const Rational& frac) {
+    // Python's Fraction rounding: round half away from zero
+    // For positive: (2*n + d) // (2*d)
+    // For negative: we need to handle it carefully
+
+    mpz_class n = frac.get_num();
+    mpz_class d = frac.get_den();
+
+    // Check the sign
+    if (n >= 0) {
+        // Positive: round half up
+        return (2 * n + d) / (2 * d);
+    } else {
+        // Negative: round half down (away from zero)
+        // This is equivalent to: -round(abs(frac))
+        return (2 * n - d) / (2 * d);
+    }
 }
 
-// ─── Gram–Schmidt + LLL (Fixed to 3D) ────────────────────────────────────
+// ─── Gram–Schmidt + LLL ──────────────────────────────────────────────────
 
-struct GSResult {
-    vector<vector<Frac>> mu;
-    vector<vector<Frac>> Bstar;
-    vector<Frac> normsq;
-};
-
-GSResult gram_schmidt(const vector<vector<Frac>>& B) {
+GramSchmidtResult gram_schmidt(const std::vector<Vector>& B) {
     size_t n = B.size();
-    vector<vector<Frac>> mu(n, vector<Frac>(n, 0));
-    vector<vector<Frac>> Bstar(n);
-    vector<Frac> normsq(n);
+
+    Matrix mu(n, Vector(n, Rational(0)));
+    std::vector<Vector> Bstar(n);
+    Vector normsq(n);
 
     for (size_t i = 0; i < n; ++i) {
-        vector<Frac> v = B[i];
+        Vector v = B[i];
+
         for (size_t j = 0; j < i; ++j) {
             mu[i][j] = dot(B[i], Bstar[j]) / normsq[j];
-            vector<Frac> sub = scalar_mult(mu[i][j], Bstar[j]);
-            v = vector_sub(v, sub);
+            v = vector_sub(v, scalar_mult(mu[i][j], Bstar[j]));
         }
+
         Bstar[i] = v;
         normsq[i] = dot(v, v);
-        if (normsq[i] == 0)
+
+        if (normsq[i] == 0) {
             throw std::runtime_error("Input basis is linearly dependent.");
+        }
     }
 
     return {mu, Bstar, normsq};
 }
 
-vector<vector<Frac>> lll1(vector<vector<Frac>> B, Frac delta) {
-    auto [mu, Bstar, normsq] = gram_schmidt(B);
+std::vector<Vector> lll1(std::vector<Vector> B, const Rational& delta) {
+    // Convert all elements to Rational
+    for (auto& row : B) {
+        for (auto& elem : row) {
+            elem.canonicalize();
+        }
+    }
+
+    GramSchmidtResult gs_result = gram_schmidt(B);
+    Matrix mu = gs_result.mu;
+    std::vector<Vector> Bstar = gs_result.Bstar;
+    Vector normsq = gs_result.normsq;
+
     size_t k = 1;
 
     while (k < 3) {
-        for (int j = (int)k - 1; j >= 0; --j) {
-            long long q = frac_round(mu[k][j]);
+        // Size reduction
+        for (int j = k - 1; j >= 0; --j) {
+            mpz_class q = frac_round(mu[k][j]);
             if (q != 0) {
-                auto sub = scalar_mult(Frac(q), B[j]);
-                B[k] = vector_sub(B[k], sub);
+                Vector Bj_scaled = scalar_mult(Rational(q), B[j]);
+                B[k] = vector_sub(B[k], Bj_scaled);
             }
         }
-        auto gs_result = gram_schmidt(B);
+
+        gs_result = gram_schmidt(B);
         mu = gs_result.mu;
         Bstar = gs_result.Bstar;
         normsq = gs_result.normsq;
 
-        if (normsq[k] >= (delta - mu[k][k - 1] * mu[k][k - 1]) * normsq[k - 1])
-            ++k;
-        else {
-            std::swap(B[k], B[k - 1]);
+        // Lovász condition
+        if (normsq[k] >= (delta - mu[k][k-1] * mu[k][k-1]) * normsq[k-1]) {
+            k++;
+        } else {
+            std::swap(B[k], B[k-1]);
             gs_result = gram_schmidt(B);
             mu = gs_result.mu;
             Bstar = gs_result.Bstar;
             normsq = gs_result.normsq;
-            k = std::max<size_t>(k - 1, 1);
+            k = std::max((int)k - 1, 1);
         }
     }
 
@@ -107,24 +129,33 @@ vector<vector<Frac>> lll1(vector<vector<Frac>> B, Frac delta) {
 
 // ─── Scaled LLL (Coppersmith Lattice) ───────────────────────────────────
 
-vector<long long> lll_scaled(const vector<vector<long long>>& B, long long X, Frac delta) {
-    Frac Xf(X);
-    Frac X2 = Xf * Xf;
+std::vector<mpz_class> lll(const std::vector<std::vector<mpz_class>>& B,
+                            const mpz_class& X,
+                            const Rational& delta) {
+    Rational X_rat(X);
+    Rational X2 = X_rat * X_rat;
 
-    vector<vector<Frac>> scaled = {
-        {X2 * B[0][0], Xf * B[0][1], Frac(B[0][2])},
-        {X2 * B[1][0], Xf * B[1][1], Frac(B[1][2])},
-        {X2 * B[2][0], Xf * B[2][1], Frac(B[2][2])}
-    };
+    // Scale the basis
+    std::vector<Vector> scaled(3, Vector(3));
+    for (int i = 0; i < 3; ++i) {
+        scaled[i][0] = X2 * Rational(B[i][0]);
+        scaled[i][1] = X_rat * Rational(B[i][1]);
+        scaled[i][2] = Rational(B[i][2]);
+    }
 
+    // Run LLL
     auto reduced = lll1(scaled, delta);
-    Frac v0 = reduced[0][0];
-    Frac v1 = reduced[0][1];
-    Frac v2 = reduced[0][2];
 
-    long long r0 = (v0 / X2).numerator() / (v0 / X2).denominator();
-    long long r1 = (v1 / Xf).numerator() / (v1 / Xf).denominator();
-    long long r2 = v2.numerator() / v2.denominator();
+    // Unscale the first vector
+    Vector v0 = reduced[0];
+    std::vector<mpz_class> result(3);
 
-    return {r0, r1, r2};
+    Rational temp0 = v0[0] / X2;
+    Rational temp1 = v0[1] / X_rat;
+
+    result[0] = temp0.get_num();
+    result[1] = temp1.get_num();
+    result[2] = v0[2].get_num();
+
+    return result;
 }

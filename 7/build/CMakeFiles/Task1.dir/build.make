@@ -72,30 +72,32 @@ include CMakeFiles/Task1.dir/flags.make
 CMakeFiles/Task1.dir/codegen:
 .PHONY : CMakeFiles/Task1.dir/codegen
 
-CMakeFiles/Task1.dir/main.cpp.o: CMakeFiles/Task1.dir/flags.make
-CMakeFiles/Task1.dir/main.cpp.o: /Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/main.cpp
-CMakeFiles/Task1.dir/main.cpp.o: CMakeFiles/Task1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Task1.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Task1.dir/main.cpp.o -MF CMakeFiles/Task1.dir/main.cpp.o.d -o CMakeFiles/Task1.dir/main.cpp.o -c /Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/main.cpp
+CMakeFiles/Task1.dir/lll.cpp.o: CMakeFiles/Task1.dir/flags.make
+CMakeFiles/Task1.dir/lll.cpp.o: /Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/lll.cpp
+CMakeFiles/Task1.dir/lll.cpp.o: CMakeFiles/Task1.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Task1.dir/lll.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Task1.dir/lll.cpp.o -MF CMakeFiles/Task1.dir/lll.cpp.o.d -o CMakeFiles/Task1.dir/lll.cpp.o -c /Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/lll.cpp
 
-CMakeFiles/Task1.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Task1.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/main.cpp > CMakeFiles/Task1.dir/main.cpp.i
+CMakeFiles/Task1.dir/lll.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Task1.dir/lll.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/lll.cpp > CMakeFiles/Task1.dir/lll.cpp.i
 
-CMakeFiles/Task1.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Task1.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/main.cpp -o CMakeFiles/Task1.dir/main.cpp.s
+CMakeFiles/Task1.dir/lll.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Task1.dir/lll.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/lll.cpp -o CMakeFiles/Task1.dir/lll.cpp.s
 
 # Object files for target Task1
 Task1_OBJECTS = \
-"CMakeFiles/Task1.dir/main.cpp.o"
+"CMakeFiles/Task1.dir/lll.cpp.o"
 
 # External object files for target Task1
 Task1_EXTERNAL_OBJECTS =
 
-Task1: CMakeFiles/Task1.dir/main.cpp.o
+Task1: CMakeFiles/Task1.dir/lll.cpp.o
 Task1: CMakeFiles/Task1.dir/build.make
 Task1: libllllib.a
+Task1: /opt/homebrew/lib/libgmpxx.dylib
+Task1: /opt/homebrew/lib/libgmp.dylib
 Task1: CMakeFiles/Task1.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Task1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Task1.dir/link.txt --verbose=$(VERBOSE)

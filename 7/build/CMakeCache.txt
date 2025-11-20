@@ -14,9 +14,6 @@
 # EXTERNAL cache entries
 ########################
 
-//The directory containing a CMake configuration file for Boost.
-Boost_DIR:PATH=/opt/homebrew/opt/boost/lib/cmake/Boost-1.89.0
-
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=CMAKE_ADDR2LINE-NOTFOUND
 
@@ -34,7 +31,7 @@ CMAKE_COLOR_MAKEFILE:BOOL=ON
 CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/c++
 
 //Flags used by the CXX compiler during all build types.
-CMAKE_CXX_FLAGS:STRING=
+CMAKE_CXX_FLAGS:STRING=-I/opt/homebrew/include
 
 //Flags used by the CXX compiler during DEBUG builds.
 CMAKE_CXX_FLAGS_DEBUG:STRING=-g
@@ -70,7 +67,7 @@ CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 CMAKE_DLLTOOL:FILEPATH=CMAKE_DLLTOOL-NOTFOUND
 
 //Flags used by the linker during all build types.
-CMAKE_EXE_LINKER_FLAGS:STRING=
+CMAKE_EXE_LINKER_FLAGS:STRING=-L/opt/homebrew/lib
 
 //Flags used by the linker during DEBUG builds.
 CMAKE_EXE_LINKER_FLAGS_DEBUG:STRING=
@@ -152,7 +149,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Lab7
+CMAKE_PROJECT_NAME:STATIC=Lab7_LLL
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -219,26 +216,32 @@ CMAKE_TAPI:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/tapi
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
-//Value Computed by CMake
-Lab7_BINARY_DIR:STATIC=/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build
+//Path to a library.
+GMPXX_LIBRARY:FILEPATH=/opt/homebrew/lib/libgmpxx.dylib
+
+//GMP include directory
+GMP_INCLUDE_DIR:PATH=/opt/homebrew/include
+
+//Path to a library.
+GMP_LIBRARY:FILEPATH=/opt/homebrew/lib/libgmp.dylib
+
+//GMP library directory
+GMP_LIBRARY_DIR:PATH=/opt/homebrew/lib
+
+//Homebrew prefix
+HOMEBREW_PREFIX:PATH=/opt/homebrew
 
 //Value Computed by CMake
-Lab7_IS_TOP_LEVEL:STATIC=ON
+Lab7_LLL_BINARY_DIR:STATIC=/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build
 
 //Value Computed by CMake
-Lab7_SOURCE_DIR:STATIC=/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7
+Lab7_LLL_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-Project_BINARY_DIR:STATIC=/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/build
+Lab7_LLL_SOURCE_DIR:STATIC=/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7
 
-//Value Computed by CMake
-Project_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-Project_SOURCE_DIR:STATIC=/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7
-
-//The directory containing a CMake configuration file for boost_headers.
-boost_headers_DIR:PATH=/opt/homebrew/opt/boost/lib/cmake/boost_headers-1.89.0
+//Dependencies for the target
+llllib_LIB_DEPENDS:STATIC=general;/opt/homebrew/lib/libgmpxx.dylib;general;/opt/homebrew/lib/libgmp.dylib;
 
 
 ########################
@@ -386,6 +389,4 @@ CMAKE_TAPI-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: boost_headers_DIR
-boost_headers_DIR-ADVANCED:INTERNAL=1
 

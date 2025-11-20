@@ -1,1 +1,1 @@
-/usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/Task1.dir/main.cpp.o -o Task1  libllllib.a
+/usr/bin/c++ -I/opt/homebrew/include -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/opt/homebrew/lib CMakeFiles/Task1.dir/lll.cpp.o -o Task1  libllllib.a /opt/homebrew/lib/libgmpxx.dylib /opt/homebrew/lib/libgmp.dylib

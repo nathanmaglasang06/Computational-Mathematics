@@ -1,1 +1,0 @@
-/usr/bin/c++  -arch arm64 -dynamiclib -Wl,-headerpad_max_install_names -o liblllfunc.dylib -install_name @rpath/liblllfunc.dylib CMakeFiles/lllfunc.dir/llllib.cpp.o

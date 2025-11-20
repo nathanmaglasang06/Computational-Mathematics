@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/Task 1.cpp" "CMakeFiles/Lab7.dir/Task_1.cpp.o" "gcc" "CMakeFiles/Lab7.dir/Task_1.cpp.o.d"
+  "/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7/main.cpp" "CMakeFiles/lab7.dir/main.cpp.o" "gcc" "CMakeFiles/lab7.dir/main.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

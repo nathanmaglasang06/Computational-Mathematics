@@ -11,10 +11,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/4.1.2/CMakeCCompiler.cmake"
   "CMakeFiles/4.1.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.1.2/CMakeSystem.cmake"
-  "/opt/homebrew/opt/boost/lib/cmake/Boost-1.89.0/BoostConfig.cmake"
-  "/opt/homebrew/opt/boost/lib/cmake/Boost-1.89.0/BoostConfigVersion.cmake"
-  "/opt/homebrew/opt/boost/lib/cmake/boost_headers-1.89.0/boost_headers-config-version.cmake"
-  "/opt/homebrew/opt/boost/lib/cmake/boost_headers-1.89.0/boost_headers-config.cmake"
   "/opt/homebrew/share/cmake/Modules/CMakeCInformation.cmake"
   "/opt/homebrew/share/cmake/Modules/CMakeCXXInformation.cmake"
   "/opt/homebrew/share/cmake/Modules/CMakeCommonLanguageInclude.cmake"
@@ -61,5 +57,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/llllib.dir/DependInfo.cmake"
+  "CMakeFiles/lab7.dir/DependInfo.cmake"
   "CMakeFiles/Task1.dir/DependInfo.cmake"
   )

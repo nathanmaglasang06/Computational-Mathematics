@@ -4,9 +4,9 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/Users/nathanmaglasang/Documents/GitHub/Computational-Mathematics/7
 
-CXX_FLAGSarm64 =  -arch arm64
+CXX_FLAGSarm64 = -I/opt/homebrew/include -std=gnu++17 -arch arm64 -Wall -Wextra
 
-CXX_FLAGS =  -arch arm64
+CXX_FLAGS = -I/opt/homebrew/include -std=gnu++17 -arch arm64 -Wall -Wextra
 

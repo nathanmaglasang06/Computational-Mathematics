@@ -1,236 +1,169 @@
-# llllib - LLL Lattice Reduction Library
+# Lab 7 Part 2: LLL Algorithm for RSA Attack
 
-## NAME
-**llllib** - Lenstra-Lenstra-Lovász (LLL) lattice basis reduction library
+This project implements the LLL (Lenstra-Lenstra-Lovász) lattice reduction algorithm in C++ for use in Coppersmith's attack on RSA encryption.
 
-## SYNOPSIS
-```cpp
-#include "llllib.h"
+## Overview
 
-std::vector<long long> lll_scaled(
-    const std::vector<std::vector<long long>>& B, 
-    long long X, 
-    Frac delta = Frac(9999, 10000)
-);
+This implementation recreates the Python LLL library in C++ using the GMP (GNU Multiple Precision) library for exact arbitrary-precision arithmetic. The LLL algorithm is used to find small integer combinations of lattice vectors, which enables breaking RSA when partial information about prime factors is known.
 
-std::vector<std::vector<Frac>> lll1(
-    std::vector<std::vector<Frac>> B, 
-    Frac delta = Frac(9999, 10000)
-);
-```
+## Requirements
 
-## DESCRIPTION
-The **llllib** library provides implementations of the LLL lattice reduction algorithm for cryptographic and computational applications. It is specifically optimized for 3×3 lattice bases and uses exact rational arithmetic via Boost's `rational<long long>`.
+- C++17 or later
+- CMake 3.10 or later
+- GMP library (libgmp-dev)
+- GMPXX library (C++ bindings for GMP)
 
-### Key Features
-- Exact rational arithmetic (no floating-point errors)
-- Specialized scaled LLL for Coppersmith-style attacks
-- Standard LLL reduction for general lattices
-- Fixed 3×3 dimension for optimal performance
+### Installing Dependencies
 
-## FUNCTIONS
-
-### lll_scaled
-```cpp
-std::vector<long long> lll_scaled(
-    const std::vector<std::vector<long long>>& B,
-    long long X,
-    Frac delta = Frac(9999, 10000)
-);
-```
-
-Performs scaled LLL reduction on a 3×3 integer basis matrix. This is primarily used in Coppersmith-style attacks where different columns need different scaling factors.
-
-**Parameters:**
-- `B` - A 3×3 basis matrix (outer vector has 3 rows, each inner vector has 3 columns)
-- `X` - Scaling parameter (typically a bound on the solution size)
-- `delta` - LLL reduction parameter (default: 0.9999, range: 0.25 < δ < 1)
-
-**Returns:**
-- A vector `[r0, r1, r2]` representing the shortest lattice vector after unscaling
-
-**Scaling Behavior:**
-- Column 0 is scaled by X²
-- Column 1 is scaled by X
-- Column 2 is unscaled
-
-**Example:**
-```cpp
-#include "llllib.h"
-#include <iostream>
-#include <vector>
-
-int main() {
-    // Coppersmith lattice for finding small roots
-    std::vector<std::vector<long long>> basis = {
-        {1, 0, 123},   // Row 0
-        {0, 1, 456},   // Row 1
-        {0, 0, 789}    // Row 2
-    };
-    
-    long long X = 1000;  // Solution bound
-    
-    auto result = lll_scaled(basis, X);
-    
-    std::cout << "Reduced vector: [" 
-              << result[0] << ", " 
-              << result[1] << ", " 
-              << result[2] << "]" << std::endl;
-    
-    return 0;
-}
-```
-
-### lll1
-```cpp
-std::vector<std::vector<Frac>> lll1(
-    std::vector<std::vector<Frac>> B,
-    Frac delta = Frac(9999, 10000)
-);
-```
-
-Performs standard LLL reduction on a 3×3 basis of rational vectors.
-
-**Parameters:**
-- `B` - A 3×3 basis matrix with `Frac` (rational) entries
-- `delta` - LLL reduction parameter (default: 0.9999, range: 0.25 < δ < 1)
-
-**Returns:**
-- An LLL-reduced basis matrix
-
-**Example:**
-```cpp
-#include "llllib.h"
-#include <boost/rational.hpp>
-#include <vector>
-
-using Frac = boost::rational<long long>;
-
-int main() {
-    std::vector<std::vector<Frac>> basis = {
-        {Frac(3), Frac(1), Frac(0)},
-        {Frac(1), Frac(2), Frac(1)},
-        {Frac(0), Frac(1), Frac(3)}
-    };
-    
-    auto reduced = lll1(basis);
-    
-    // reduced now contains the LLL-reduced basis
-    for (const auto& row : reduced) {
-        for (const auto& val : row) {
-            std::cout << val << " ";
-        }
-        std::cout << std::endl;
-    }
-    
-    return 0;
-}
-```
-
-## TYPES
-
-### Frac
-```cpp
-using Frac = boost::rational<long long>;
-```
-
-A rational number type supporting exact arithmetic. Used throughout the library to avoid floating-point precision issues.
-
-**Construction:**
-```cpp
-Frac a(3, 4);      // 3/4
-Frac b(5);         // 5/1
-Frac c = a + b;    // 23/4
-```
-
-## DELTA PARAMETER
-
-The `delta` parameter controls the quality of the reduction:
-
-- **δ = 0.25**: Minimal reduction (fast, poor quality)
-- **δ = 0.75**: Standard LLL (good balance)
-- **δ = 0.99**: High quality (slower, better reduction)
-- **δ = 0.9999**: Near-optimal (default, cryptographic quality)
-
-Higher values produce shorter basis vectors but require more computation.
-
-## BUILDING
-
-### CMakeLists.txt
-```cmake
-cmake_minimum_required(VERSION 3.21)
-project(MyProject)
-
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED YES)
-
-find_package(Boost REQUIRED)
-
-add_library(llllib llllib.cpp)
-target_link_libraries(llllib PUBLIC Boost::boost)
-
-add_executable(myapp main.cpp)
-target_link_libraries(myapp PRIVATE llllib)
-```
-
-### Compilation
+**Ubuntu/Debian:**
 ```bash
-mkdir build && cd build
+sudo apt-get install libgmp-dev libgmpxx4ldbl
+```
+
+**macOS (using Homebrew):**
+```bash
+brew install gmp
+```
+
+**Fedora/RHEL:**
+```bash
+sudo dnf install gmp-devel
+```
+
+## Project Structure
+
+```
+.
+├── CMakeLists.txt       # CMake build configuration
+├── README.md            # This file
+├── llllib.h             # Header file with LLL function declarations
+├── llllib.cpp           # Implementation of LLL algorithm
+├── main.cpp             # Main program for Lab 7 tasks
+├── lll.cpp              # Test program for Task 1
+├── lab07-2.txt          # Input data file (n, d, p0, X)
+└── build/               # Build directory (created by CMake)
+```
+
+## Building the Project
+
+1. Create and enter the build directory:
+```bash
+mkdir -p build
+cd build
+```
+
+2. Run CMake to generate build files:
+```bash
 cmake ..
+```
+
+3. Compile the project:
+```bash
 make
 ```
 
-## REQUIREMENTS
+This will create two executables:
+- `lab7` - Main program that solves all lab tasks
+- `Task1` - Test program for verifying LLL implementation
 
-- **C++17** or later (for structured bindings)
-- **Boost** library (for `boost::rational`)
-- **CMake 3.21+** (or adjust version in CMakeLists.txt)
+## Running the Programs
 
-## LIMITATIONS
+### Task 1: Testing LLL Implementation
 
-- Fixed to 3×3 matrices only
-- No support for larger dimensions
-- Integer overflow possible with very large inputs (values beyond ~10^18)
-
-## ERROR HANDLING
-
-The library throws `std::runtime_error` in the following cases:
-
-- **Linearly dependent basis**: If the input basis vectors are not linearly independent
-  ```cpp
-  try {
-      auto result = lll_scaled(basis, X);
-  } catch (const std::runtime_error& e) {
-      std::cerr << "Error: " << e.what() << std::endl;
-  }
-  ```
-
-## APPLICATIONS
-
-### Cryptography
-- Breaking RSA with partial key exposure (Coppersmith's attack)
-- Finding small solutions to polynomial equations modulo N
-- Subset sum problems
-
-### Number Theory
-- Finding short vectors in lattices
-- Simultaneous Diophantine approximation
-- Integer relation detection
-
-## SEE ALSO
-
-- Lenstra, A.K., Lenstra, H.W., Lovász, L. (1982). "Factoring polynomials with rational coefficients"
-- Coppersmith, D. (1996). "Finding a small root of a univariate modular equation"
-
-## AUTHOR
-Nathan Maglasang (7/11/2025)
-
-## NOTES
-
-The default `delta = 9999/10000` provides near-optimal reduction suitable for cryptographic applications while maintaining reasonable performance.
-
-For debugging, you can print rational numbers:
-```cpp
-Frac x(22, 7);
-std::cout << x << std::endl;  // Outputs: 22/7
+From the build directory:
+```bash
+./Task1
 ```
+
+This will test the LLL function with the example matrix and different X values.
+
+### Tasks 2-4: Complete Lab Solution
+
+From the build directory:
+```bash
+./lab7
+```
+
+This will:
+1. Read the data from `lab07-2.txt`
+2. Use LLL to find the prime factors p and q of n
+3. Compute Alice's private key e
+4. Decrypt and decode the intercepted message
+
+## How It Works
+
+### LLL Algorithm
+
+The LLL algorithm performs lattice basis reduction to find short vectors in a lattice. Key components:
+
+1. **Gram-Schmidt Orthogonalization**: Computes orthogonal basis and projection coefficients
+2. **Size Reduction**: Ensures basis vectors are nearly orthogonal
+3. **Lovász Condition**: Swaps vectors when they violate a length condition
+
+### Coppersmith's Attack
+
+The attack works when we know an approximation p₀ to one of the primes p:
+
+1. Set up lattice with basis vectors [1, 2p₀, p₀²], [0, n, 0], [0, 0, n]
+2. Apply LLL with scaling parameter X to find coefficients a, b, c
+3. Solve quadratic equation ax² + bx + c = 0 to find x
+4. Recover p = p₀ + x and q = n/p
+5. Compute φ(n) = (p-1)(q-1)
+6. Find private key e ≡ d⁻¹ (mod φ(n))
+7. Decrypt message m ≡ c^e (mod n)
+
+## API Reference
+
+### Main Functions
+
+```cpp
+// Apply scaled LLL reduction
+std::vector<mpz_class> lll(
+    const std::vector<std::vector<mpz_class>>& B,
+    const mpz_class& X,
+    const Rational& delta = Rational(9999, 10000)
+);
+
+// Standard LLL reduction
+std::vector<Vector> lll1(
+    std::vector<Vector> B,
+    const Rational& delta = Rational(9999, 10000)
+);
+
+// Gram-Schmidt orthogonalization
+GramSchmidtResult gram_schmidt(const std::vector<Vector>& B);
+```
+
+### Helper Functions
+
+```cpp
+Rational dot(const Vector& u, const Vector& v);
+Vector scalar_mult(const Rational& c, const Vector& v);
+Vector vector_sub(const Vector& u, const Vector& v);
+mpz_class frac_round(const Rational& frac);
+```
+
+## Notes
+
+- All arithmetic is performed using exact rational numbers (GMP's `mpq_class`)
+- The implementation is fixed to 3-dimensional lattices as required for the lab
+- The default delta parameter (0.9999) provides very strong reduction
+- Input data should be in the format specified in lab07-2.txt
+
+## Troubleshooting
+
+**Linker errors about GMP:**
+- Ensure libgmp-dev and libgmpxx4ldbl are installed
+- Check that CMake found the GMP libraries (look for messages during cmake configuration)
+
+**File not found errors:**
+- Ensure lab07-2.txt is in the same directory as the executable
+- Or run the executable from the project root directory
+
+**Compilation errors:**
+- Verify you have a C++17 compatible compiler
+- Check that all source files are in the correct locations
+
+## License
+
+This is educational software created for ZSPS2115 Computational Mathematics and Applied Cryptography.
